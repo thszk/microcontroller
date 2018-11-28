@@ -66,7 +66,7 @@ le:
 ;a0				
 			CJNE			A,#11001111B,a1 	; 001
 
-			MOV				R0,#100				; tempo de PWM 
+			MOV				R0,#200				; tempo de PWM 
 			MOV 			r1,#0F0H			;| periodo 40ms
 			MOV 			r2,#05FH			;| 10% on
 			MOV 			r3,#073H			;|
@@ -76,7 +76,7 @@ le:
 a1:
 			CJNE			A,#10101111B,a2 	; 010
 			
-			MOV				R0,#100				; tempo de PWM
+			MOV				R0,#200				; tempo de PWM
 			mov 			r1,#0D8H			;| periodo 40ms
 			mov 			r2,#0EFH			;| 25% on
 			mov 			r3,#08AH			;|
@@ -86,7 +86,7 @@ a1:
 a2:
 			CJNE			A,#11101111B,a3 	; 011
 
-			MOV				R0,#100				; tempo de PWM
+			MOV				R0,#200				; tempo de PWM
 			mov 			r1,#08AH			;| periodo 40ms
 			mov 			r2,#0CFH			;| 25% on
 			mov 			r3,#0D8H			;|
@@ -96,7 +96,7 @@ a2:
 a3:
 			CJNE			A,#11011111B,a4		; 101
 
-			MOV				R0,#100				; tempo de PWM
+			MOV				R0,#200				; tempo de PWM
 			mov 			r1,#0E0H 			;| periodo 80ms
 			mov 			r2,#0BFH 			;| 10% on
 			mov 			r3,#073H 			;|
@@ -116,7 +116,7 @@ a4:
 a5:
 			CJNE			A,#11111111B,le 	; 111
 
-			MOV				R0,#100				; tempo de PWM
+			MOV				R0,#200				; tempo de PWM
 			mov 			r1,#005H 			;| periodo 80ms
 			mov 			r2,#0FFH 			;| 80% on
 			mov 			r3,#0C1H 			;|
@@ -353,7 +353,7 @@ serial_dez_pc_40ms:
 cmp_serial_dez_pc_40ms:			
 			CJNE			a,#61H,dim_serial_dez_pc_40ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0E8h			;|
 			mov 			r2,#08Fh			;|parte alta 15%
@@ -362,7 +362,7 @@ cmp_serial_dez_pc_40ms:
 
 			jmp				dez_pc_40ms
 dim_serial_dez_pc_40ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0F8h			;|
 			mov 			r2,#02Fh			;|parte alta 5%
@@ -385,23 +385,23 @@ serial_vinte_cinco_pc_40ms:
 cmp_serial_vinte_cinco_pc_40ms:
 			CJNE			a,#61H,dim_serial_vinte_cinco_pc_40ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0D1h			;|
 			mov 			r2,#01Fh			;|parte alta 30%
 			mov 			r3,#092h			;|
 			mov 			r4,#09Fh			;|parte baixa 70%
 
-			jmp				dez_pc_40ms
+			jmp				vinte_cinco_pc_40ms
 dim_serial_vinte_cinco_pc_40ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0E0h			;|
 			mov 			r2,#0BFh			;|parte alta 20%
 			mov 			r3,#082h			;|
 			mov 			r4,#0FFh			;|parte baixa 80%
 
-			jmp				dez_pc_40ms
+			jmp				vinte_cinco_pc_40ms
 
 ;--------------------------------
 ;	serial_setenta_cinco_pc_40ms
@@ -416,23 +416,23 @@ serial_setenta_cinco_pc_40ms:
 cmp_serial_setenta_cinco_pc_40ms:
 			CJNE			a,#61H,dim_serial_setenta_cinco_pc_40ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#082h			;|
 			mov 			r2,#0FFh			;|parte alta 80%
 			mov 			r3,#0E0h			;|
 			mov 			r4,#0BFh			;|parte baixa 20%
 
-			jmp				dez_pc_40ms
+			jmp				setenta_cinco_pc_40ms
 dim_serial_setenta_cinco_pc_40ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#092h			;|
 			mov 			r2,#09Fh			;|parte alta 70%
 			mov 			r3,#0D1h			;|
 			mov 			r4,#01Fh			;|parte baixa 30%
 
-			jmp				dez_pc_40ms
+			jmp				setenta_cinco_pc_40ms
 
 
 ;--------------------------------
@@ -448,23 +448,23 @@ serial_dez_pc_80ms:
 cmp_serial_dez_pc_80ms:
 			CJNE			a,#61H,dim_serial_dez_pc_80ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0D1h			;|
 			mov 			r2,#01Fh			;|parte alta 15%
 			mov 			r3,#07Bh			;|
 			mov 			r4,#02Fh			;|parte baixa 85%
 
-			jmp				dez_pc_40ms
+			jmp				dez_pc_80ms
 dim_serial_dez_pc_80ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0F0h			;|
 			mov 			r2,#05Fh			;|parte alta 5%
 			mov 			r3,#06Bh			;|
 			mov 			r4,#08Fh			;|parte baixa 95%
 
-			jmp				dez_pc_40ms
+			jmp				dez_pc_80ms
 
 
 ;--------------------------------
@@ -480,16 +480,16 @@ serial_trinta_pc_80ms:
 cmp_serial_trinta_pc_80ms:
 			CJNE			a,#61H,dim_serial_trinta_pc_80ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#092h			;|
 			mov 			r2,#09Fh			;|parte alta 35%
 			mov 			r3,#034h			;|
 			mov 			r4,#0DFh			;|parte baixa 65%
 
-			jmp				dez_pc_40ms
+			jmp				trinta_pc_80ms
 dim_serial_trinta_pc_80ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#0B1h			;|
 			mov 			r2,#0DFh			;|parte alta 25%
@@ -512,23 +512,23 @@ serial_oitenta_pc_80ms:
 cmp_serial_oitenta_pc_80ms:
 			CJNE			a,#61H,dim_serial_oitenta_pc_80ms
 			
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			;mov 			r1,#092h			;|
 			;mov 			r2,#09Fh			;|parte alta 85%
 			;mov 			r3,#034h			;|
 			;mov 			r4,#0DFh			;|parte baixa 15%
 
-			jmp				dez_pc_40ms
+			jmp				oitenta_pc_80ms
 dim_serial_oitenta_pc_80ms:
-			mov 			r0,#100				; carrega tempo de PWM
+			mov 			r0,#200				; carrega tempo de PWM
 
 			mov 			r1,#015h			;|
 			mov 			r2,#09Fh			;|parte alta 75%
 			mov 			r3,#0B1h			;|
 			mov 			r4,#0DFh			;|parte baixa 25%
 
-			jmp				trinta_pc_80ms
+			jmp				oitenta_pc_80ms
 
 
 ;fim sub-rotina da serial
