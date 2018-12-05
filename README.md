@@ -3,4 +3,5 @@
 projects applied to microcontrollers simulated at proteus software
 
 
-- PWM (Pulse Width Modulation) with serial commands
+- PWM with serial commands
+- MeArm (robotic arm)
