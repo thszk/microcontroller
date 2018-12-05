@@ -5,9 +5,18 @@ PWM/attachment/relatorio.docx
 PWM/attachment/~$*.docx
 PWM/attachment/relatorio.pdf
 
-
 PWM/Last Loaded simulacao_PWM.DBK
 PWM/Last Loaded transmissao_serial.DBK
 
 PWM/simulacao_PWM.PWI
 PWM/transmissao_serial.PWI
+
+MeArm/STARTUP.A51
+MeArm/MeArm.uvproj
+MeArm/MeArm.uvopt
+MeArm/MeArm.uvgui.Zacky
+MeArm/Simulation/Last Loaded meArm_control.DBK
+MeArm/Simulation/meArm_control.PWI
+MeArm/Objects/*
+MeArm/Listings/*
+MeArm/archive/*
